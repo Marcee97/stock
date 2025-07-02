@@ -1,0 +1,19 @@
+
+
+
+.nav{
+    display: flex;
+}
+
+.nav-ul{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    list-style: none;
+    padding: .3em;
+    
+}
+a{
+    text-decoration: none;
+
+}
