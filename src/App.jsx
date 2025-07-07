@@ -1,13 +1,12 @@
 import { Navbar } from "./layout/Navbar"
-import { Historial } from "./layout/Historial.jsx";
-import { Registro } from "./layout/Registro.jsx";
-
+import "./app.css";
+import { Base } from "./layout/Base.jsx";
+import { Add } from "./layout/Add.jsx";
 export const App = () => {
   return (
-    <>
+    <section className="app">
     <Navbar/>
-    <Registro/>
-    <Historial/>
-    </>
+    <Base/>
+    </section>
   )
 }

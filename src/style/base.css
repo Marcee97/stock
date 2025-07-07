@@ -1,0 +1,42 @@
+
+.base{
+    padding: .7em;
+    width: 100%;
+    position: relative;
+}
+.cont-titulos{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5em;
+    color: #fff;
+
+}
+
+.base-titulo{
+font-size: 1.5em;
+}
+.base-subtitulo{
+    color: rgb(69, 70, 70);
+}
+.cont-flotantes{
+    font-family: sans-serif;
+    display: flex;
+    gap: .3em;
+    width: 100%;
+}
+
+.flotante{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    font-size: 1.3em;
+    box-shadow: 1px 1px 5px #000;
+    background-color: rgb(105, 75, 9);
+    padding: 2em 1em;
+    font-family: sans-serif;
+    width: 100%;
+    gap: .5em;
+    border-radius:5px ;
+    color: #fff;
+}

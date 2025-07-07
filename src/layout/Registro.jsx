@@ -14,7 +14,6 @@ export const Registro = () => {
         })
     }
 
-
   return (
     <>
       <div className="registro">

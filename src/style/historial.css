@@ -1,0 +1,14 @@
+.historial{
+transition: .5s;
+transform: translateX(0%);
+background-color: rgb(86, 88, 88);
+height: 100vh;
+}
+
+.cont-historial{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: .5em;
+}

@@ -16,17 +16,16 @@ export const Historial = () => {
     } catch (error) {
       console.log(error)
     }
-   
-    
-
   };
 
   //HACER PETICION GET  Y MOSTRSR LA INFORMACION EN EL FRONT
   return (
     <>
-      <section>
-        <div>
-          <button onClick={getInfo}>Pedir info</button>
+      <section className="historial">
+        <div className="cont-historial">
+          <span class="material-symbols-outlined" onClick={getInfo}>
+restart_alt
+</span>
           <div>
            {data.length === 0 ? (
             <p>No hay datos</p>
@@ -36,10 +35,8 @@ export const Historial = () => {
               <p>{item.name}</p>
               <p>{item.apellido}</p>
               </div>
-
             ))
            )}
-            <p></p>
           </div>
         </div>
       </section>

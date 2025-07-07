@@ -1,19 +1,32 @@
 
-
-
 .nav{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5em;
+    padding: 1em;
+
 }
 
-.nav-ul{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    list-style: none;
-    padding: .3em;
-    
+.buscador{
+    position: relative;
+    padding: .9em;
+    padding-left: 2em;
+    width: 35%;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(223, 223, 223);
 }
-a{
-    text-decoration: none;
 
+.iconsearch{
+    position: absolute;
+    color: rgb(95, 95, 95);
+}
+
+.btn-add{
+    padding: .8em 1.9em;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(235, 161, 4);
+    font-weight: 800;
 }
