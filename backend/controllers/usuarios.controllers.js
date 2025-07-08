@@ -24,3 +24,16 @@ export const add = (req, res) => {
     console.log(error);
   }
 };
+
+
+export const reserva = (req, res) => {
+  try {
+    
+    console.log(req.body)
+    const {nombre, apellido, articulo, importe} = req.body
+    const stmt = db.prepare("INSERT INTO bicicleteria (name, apellido, articulo, importe) VALUES (?, ?, ?, ?)")
+    const result = stmt.run(nombre, apellido, articulo, importe)
+  }catch(error){
+    console.log(error)
+  }
+}

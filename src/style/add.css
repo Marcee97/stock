@@ -1,22 +1,56 @@
 .add {
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
+  border-radius: 5px;
+  
 }
 
 .cont-add {
+  border-radius: 5px;
   color: #fff;
   backdrop-filter: blur(5px);
   background-color: rgba(0, 0, 0, 0.801);
   padding: .3em;
-  
 
 }
 
 .add-nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding: .2em;
+  font-size: 1.1em;
+}
+
+.active{
+  border-bottom: 1px solid #ffb20c;
+
+}
+.cont-form{
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.titulo-add{
+font-size: 1.3em;
+}
+
+.cont-form-cliente{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: .6em;
+
+}
+
+.input-add-cliente{
+    width: 70%;
+    padding: .7em;
+    border: none;
+    border-radius: 5px;
+
 }
