@@ -1,6 +1,20 @@
+import axios from "axios";
 import "../style/base.css";
 import { Add } from "./Add";
+import { useEffect, useState } from "react";
 export const Base = () => {
+
+const [refresh, setRefresh] = useState([])
+useEffect(() => {
+  const fetchData = async () => {
+
+    const result = await axios.get("http://localhost:3000/refresh")
+    setRefresh(result.data)
+  };
+fetchData();
+
+}, [])
+
   return (
     <>
       <section className="base">
@@ -20,7 +34,7 @@ export const Base = () => {
           </article>
           <article className="flotante">
             <strong>Recaudacion</strong>
-            <p>1200 $</p>
+            <p>{refresh[0] ? refresh[0].recaudacion : "Cargando..."}</p>
           </article>
         </div>
     <Add/>
