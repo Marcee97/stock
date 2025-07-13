@@ -7,21 +7,28 @@ export const Add = () => {
   const [apellido, setApellido] = useState("")
   const [articulo, setArticulo] = useState("")
   const [importe, setImporte] = useState(0)
+  const [seña, setSeña] = useState(0)
 
   const compraReserva = async() => {
-    if (modo === "reserva") {
-      console.log("Modo Reserva");
+    if (modo === "venta") {
+      const result = await axios.post("http://localhost:3000/venta", {
+        nombre,
+        apellido,
+        articulo,
+        importe
+      })
+      console.log("Se registro una venta")
 
     } else {
        const result = await axios.post("http://localhost:3000/reserva", {
         nombre,
         apellido,
         articulo,
-        importe
+        seña
       })
-      console.log(nombre);
+      console.log("Se hizo una reserva");
     }
-  };
+  }
 
   return (
     <>
