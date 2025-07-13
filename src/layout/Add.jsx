@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../style/add.css";
 import axios from "axios";
+import { useAppContext } from "../../backend/context/TheContext.jsx";
 export const Add = () => {
+
+  const {onAdd} = useAppContext()
+console.log(onAdd)
+
   const [modo, setModo] = useState("venta");
   const [nombre, setNombre] = useState("")
   const [apellido, setApellido] = useState("")
@@ -32,7 +37,7 @@ export const Add = () => {
 
   return (
     <>
-      <section className="add">
+      <section className={`add ${onAdd === true ? "transform-active" : ""}`}>
         <div className="cont-add">
           <div className="add-nav">
             <p className={`nav-opcion-venta ${modo === "venta" ? "active" : ""}`} onClick={()=> setModo("venta")}>Venta</p>

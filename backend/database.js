@@ -23,6 +23,10 @@ db.prepare(`CREATE TABLE IF NOT EXISTS resumen (
   INSERT OR IGNORE INTO resumen (id, recaudacion) VALUES (1, 0)
 `).run();
 
+//db.prepare(`CREATE TABLE IF NOT EXISTS encargos (
+// id INTEGER PRIMARY KEY,
+// reservas)`)
+
 export default db;
 
 //backend\mi-stock.db
