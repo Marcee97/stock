@@ -1,4 +1,4 @@
-import { useAppContext } from "../../backend/context/TheContext.jsx";
+import { useAppContext } from "../context/TheContext.jsx";
 import "../style/navbar.css";
 export const Navbar = () => {
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../style/add.css";
 import axios from "axios";
-import { useAppContext } from "../../backend/context/TheContext.jsx";
+import { useAppContext } from "../context/TheContext.jsx";
 export const Add = () => {
 
   const {onAdd} = useAppContext()
@@ -25,11 +25,11 @@ console.log(onAdd)
       console.log("Se registro una venta")
 
     } else {
-       const result = await axios.post("http://localhost:3000/reserva", {
+       const result = await axios.post("http://localhost:3000/reservas", {
         nombre,
         apellido,
         articulo,
-        seña
+        importe
       })
       console.log("Se hizo una reserva");
     }

@@ -2,19 +2,55 @@
   color: #fff;
 }
 
-.cont-historial{
-
+.cont-historial {
 }
 
-.historial-cabecera{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+.cont-reservas {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 0 0.7em;
 }
 
-.historial-items{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    border: 1px solid rgb(34, 33, 33);
-    margin-bottom: 1px;
+.cont-reservas__botones{
+  display: flex;
+  gap: 2em;
+margin-bottom: 2em;
 
+}
+.titulo-reservas {
+  font-size: 1.3em;
+  border-bottom: 1px solid red;
+}
+
+.historial-cabecera {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  padding: 0 .7em;
+}
+
+.historial-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  border: 1px solid rgb(34, 33, 33);
+  margin-bottom: 1px;
+  padding: 0 0.7em;
+}
+
+.cabecera-reservas{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.reservas-items{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  padding: .2em;
+  
+}
+
+.items-reserva-ventas{
+  padding: .4em;
+  background-color: #131212;
+  margin-bottom: 2px;
 }

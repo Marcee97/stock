@@ -2,7 +2,7 @@ import Database from "better-sqlite3";
 
 const db = new Database("./mi-stock.db");
 
-// db.prepare('DROP TABLE bicicleteria').run()
+//  db.prepare('DROP TABLE encargos').run()
 
 db.prepare(`
   CREATE TABLE IF NOT EXISTS bicicleteria (
@@ -23,9 +23,12 @@ db.prepare(`CREATE TABLE IF NOT EXISTS resumen (
   INSERT OR IGNORE INTO resumen (id, recaudacion) VALUES (1, 0)
 `).run();
 
-//db.prepare(`CREATE TABLE IF NOT EXISTS encargos (
-// id INTEGER PRIMARY KEY,
-// reservas)`)
+db.prepare(`CREATE TABLE IF NOT EXISTS encargos (
+id INTEGER PRIMARY KEY,
+name TEXT NOT NULL,
+apellido TEXT NOT NULL,
+articulo TEXT NOT NULL,
+seña INTEGER)`).run()
 
 export default db;
 

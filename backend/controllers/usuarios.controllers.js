@@ -33,14 +33,27 @@ export const reserva = (req, res) => {
   try {
     console.log(req.body);
     const { nombre, apellido, articulo, importe } = req.body;
+    console.log(nombre, apellido, articulo, importe)
     const stmt = db.prepare(
-      "INSERT INTO bicicleteria (name, apellido, articulo, recaudacion) VALUES (?, ?, ?, ?)"
+      "INSERT INTO encargos (name, apellido, articulo, seña) VALUES (?, ?, ?, ?)"
     );
     const result = stmt.run(nombre, apellido, articulo, importe);
   } catch (error) {
     console.log(error);
   }
 };
+
+export const getReservas = (req, res) => {
+  try {
+    const result = db.prepare("SELECT * FROM encargos")
+const info = result.all()
+
+res.json(info)
+  } catch (error) {
+    console.log(error)
+  }
+
+}
 
 
 export const refresh = (req, res) => {
