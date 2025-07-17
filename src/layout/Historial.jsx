@@ -1,76 +1,72 @@
-import axios from "axios";
 import "../style/historial.css";
-import { useState } from "react";
 import { useAppContext } from "../context/TheContext.jsx";
+import React from "react";
 
 export const Historial = () => {
   const { reservas, toggleInfo, setToggleInfo, historial } = useAppContext();
 
   console.log(historial);
 
-
   return (
-    <>
-      <section className="historial">
-        <div className="cont-historial">
-          <div className="cont-reservas">
-            <div className="cont-reservas__botones">
-              <h4
-                className="titulo-reservas"
-                onClick={() => setToggleInfo((prev) => !prev)}
-              >
-                Reservas
-              </h4>
-              <h4
-                className="titulo-reservas"
-                onClick={() => setToggleInfo((prev) => !prev)}
-              >
-                Ventas
-              </h4>
+   <>
+  <section className="historial">
+    <div className="cont-historial">
+      <div className="cont-reservas">
+        <div className="cont-reservas__botones">
+          <h4
+            className="titulo-reservas"
+            onClick={() => setToggleInfo(true)}
+          >
+            Reservas
+          </h4>
+          <h4
+            className="titulo-reservas"
+            onClick={() => setToggleInfo(false)}
+          >
+            Ventas
+          </h4>
+        </div>
+      </div>
+
+      <section className="cuadro-historial-reservas">
+        <div className={toggleInfo ? "grid-header" : "grid-header__historial"}>
+          <strong>Nombre</strong>
+          <strong>Apellido</strong>
+          <strong>Articulo</strong>
+          <strong>Seña</strong>
+          {!toggleInfo && <strong>Precio</strong>}
+        </div>
+
+        {(toggleInfo ? reservas : historial).map((item, index) => (
+          <div
+            className={
+              toggleInfo ? "cont-reservass" : "cont-reservass__historial"
+            }
+            key={index}
+          >
+            <div className="item-reservas__button">
+              <div className="reservas-botonera">
+                <span className="material-symbols-outlined reservas-botones">
+                  delete
+                </span>
+                <span className="material-symbols-outlined reservas-botones">
+                  add
+                </span>
+              </div>
+              <span className="nombre item-reservas">{item.name}</span>
             </div>
-           
-          </div>
-          <div className="section-reservas-ventas">
-            {toggleInfo == false ? (
-              <div>
-                <header className="historial-cabecera">
-                  <strong>Nombre</strong>
-                  <strong>Apellido</strong>
-                  <strong>Articulo</strong>
-                  <strong>Seña</strong>
-                  <strong>Importe</strong>
-                </header>
-             { historial.map((item, index) => (
-               <div key={index} className="historial-items">
-                  <p  className="items-reserva-ventas">{item.name}</p>
-                  <p  className="items-reserva-ventas">{item.apellido}</p>
-                  <p  className="items-reserva-ventas">{item.articulo}</p>
-                  <p  className="items-reserva-ventas">{item.reserva == null ? "Sin seña" : "no es null"}</p>
-                  <p  className="items-reserva-venta">{item.importe}</p>
-                </div>
-              ))}
-              </div>
-            ) : (
-              <div>
-                <header className="cabecera-reservas">
-                  <strong>Nombre</strong>
-                  <strong>Apellido</strong>
-                  <strong>Articulo</strong>
-                  <strong>Seña</strong>
-                </header>
-                {reservas.map((item, index) => (
-                    <div className="reservas-items" key={index}>
-                      <p className="items-reserva-ventas">{item.name}</p>
-                      <p className="items-reserva-ventas">{item.apellido}</p>
-                      <p className="items-reserva-ventas">{item.articulo}</p>
-                      <p className="items-reserva-ventas">{item.seña}</p>
-                    </div>
-                ))}
-              </div>
+            <p className="item-reservas">{item.apellido}</p>
+            <p className="item-reservas">{item.articulo}</p>
+            <p className="item-reservas">{item.seña == null ? "Sin seña" : item.seña}</p>
+            {!toggleInfo && (
+              <p className="item-reservas">{item.importe}</p>
             )}
           </div>
-        </div>
+        ))}
       </section>
-    </>
+    </div>
+  </section>
+</>
+
   );
 };

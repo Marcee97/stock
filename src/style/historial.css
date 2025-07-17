@@ -5,52 +5,91 @@
 .cont-historial {
 }
 
+.section-reservas-ventas {
+}
+
 .cont-reservas {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  padding: 0 0.7em;
 }
 
-.cont-reservas__botones{
+.cont-reservas__botones {
   display: flex;
   gap: 2em;
-margin-bottom: 2em;
-
+  margin-bottom: 2em;
+  padding: 0 1em;
 }
 .titulo-reservas {
   font-size: 1.3em;
   border-bottom: 1px solid red;
 }
 
-.historial-cabecera {
+.cuadro-historial-reservas {
+}
+
+.grid-header {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  padding: 0 .7em;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  border-top: 1px solid #fff;
+  padding-top: .5em;
 }
 
-.historial-items {
+.cont-reservass {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  border: 1px solid rgb(34, 33, 33);
-  margin-bottom: 1px;
-  padding: 0 0.7em;
-}
-
-.cabecera-reservas{
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-.reservas-items{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr ;
-  padding: .2em;
-  
-}
-
-.items-reserva-ventas{
-  padding: .4em;
-  background-color: #131212;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  background: linear-gradient(0.25turn, #000000, #222222, #000000);
   margin-bottom: 2px;
+  font-size: 1.2em;
+  padding: .3em 0;
+}
+
+.item-reservas{
+font-size: 1.1em;
+}
+
+.item-reservas__button{
+  width: 100%;
+  display: grid;
+  grid-template-columns:auto 1fr auto;
+  position: relative;
+}
+
+.reservas-botonera{
+  display: flex;
+  gap: .2em;
+}
+
+.reservas-botones{
+  font-size: 1.1em;
+}
+.nombre{
+  grid-column: 1 / -1;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  left: 8px;
+}
+.grid-header__historial{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+   place-items: center;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  border-top: 1px solid #fff;
+  padding-top: .5em;
+}
+
+.cont-reservass__historial{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  place-items: center;
+  background: linear-gradient(0.25turn, #000000, #222222, #000000);
+  margin-bottom: 2px;
+  font-size: 1.2em;
+  padding: .3em 0;
 }
