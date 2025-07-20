@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "../style/add.css";
 import axios from "axios";
-import { useAppContext } from "../context/TheContext.jsx";
+import TheContext from "../context/TheContext.jsx";
 export const Add = () => {
 
-  const {onAdd} = useAppContext()
+  const {onAdd} = useContext(TheContext)
 console.log(onAdd)
 
   const [modo, setModo] = useState("venta");

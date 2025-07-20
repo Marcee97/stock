@@ -1,5 +1,6 @@
 .historial {
   color: #fff;
+  position: relative;
 }
 
 .cont-historial {
@@ -22,10 +23,11 @@
 }
 .titulo-reservas {
   font-size: 1.3em;
-  border-bottom: 1px solid red;
 }
 
-.cuadro-historial-reservas {
+.titulo-active{
+  border-bottom: 1px solid rgb(211, 210, 179);
+
 }
 
 .grid-header {
@@ -64,8 +66,15 @@ font-size: 1.1em;
   gap: .2em;
 }
 
+.historial-active{
+  display: none;
+}
+
 .reservas-botones{
   font-size: 1.1em;
+  position: relative;
+  z-index: 45;
+
 }
 .nombre{
   grid-column: 1 / -1;

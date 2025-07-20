@@ -1,11 +1,10 @@
 import "../style/historial.css";
-import { useAppContext } from "../context/TheContext.jsx";
-import React from "react";
+import React, { useContext } from "react";
+import { ModalReserva } from "./ModalReserva.jsx";
+import TheContext from "../context/TheContext.jsx";
 
 export const Historial = () => {
-  const { reservas, toggleInfo, setToggleInfo, historial } = useAppContext();
-
-  console.log(historial);
+  const { reservas, toggleInfo, setToggleInfo, historial,  completarReserva, setToggleModalReserva} = useContext(TheContext);
 
   return (
    <>
@@ -14,13 +13,13 @@ export const Historial = () => {
       <div className="cont-reservas">
         <div className="cont-reservas__botones">
           <h4
-            className="titulo-reservas"
+            className={toggleInfo ? "titulo-reservas  titulo-active" : "titulo-reservas "}
             onClick={() => setToggleInfo(true)}
           >
             Reservas
           </h4>
           <h4
-            className="titulo-reservas"
+            className={toggleInfo ? "titulo-reservas" : "titulo-reservas titulo-active"}
             onClick={() => setToggleInfo(false)}
           >
             Ventas
@@ -36,7 +35,6 @@ export const Historial = () => {
           <strong>Seña</strong>
           {!toggleInfo && <strong>Precio</strong>}
         </div>
-
         {(toggleInfo ? reservas : historial).map((item, index) => (
           <div
             className={
@@ -46,10 +44,10 @@ export const Historial = () => {
           >
             <div className="item-reservas__button">
               <div className="reservas-botonera">
-                <span className="material-symbols-outlined reservas-botones">
+                <span className="material-symbols-outlined reservas-botones" onClick={()=>setToggleModalReserva(prev => !prev)}>
                   delete
                 </span>
-                <span className="material-symbols-outlined reservas-botones">
+                <span className={toggleInfo ? "material-symbols-outlined reservas-botones" : "material-symbols-outlined reservas-botones historial-active"} onClick={() => completarReserva(item)}>
                   add
                 </span>
               </div>
@@ -63,6 +61,7 @@ export const Historial = () => {
             )}
           </div>
         ))}
+        <ModalReserva/>
       </section>
     </div>
   </section>

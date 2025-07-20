@@ -1,8 +1,9 @@
-import { useAppContext } from "../context/TheContext.jsx";
+import { useContext } from "react";
+import TheContext from "../context/TheContext.jsx";
 import "../style/navbar.css";
 export const Navbar = () => {
 
-  const {setOnAdd} = useAppContext()
+  const {setOnAdd} = useContext(TheContext)
   return (
     <>
       <nav className="nav">

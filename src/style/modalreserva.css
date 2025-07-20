@@ -1,0 +1,32 @@
+.modal-reserva {
+  position: absolute;
+  z-index: 85;
+  background-color: rgb(68, 68, 68);
+  top: 50%;
+  left: 50%;
+  transform: translate(-200%, -50%);
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.modal-reserva-active {
+  position: absolute;
+  z-index: 85;
+  background-color: rgb(68, 68, 68);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+  border-radius: 5px;
+  
+}
+.cont-modal-reserva {
+  padding: 1.5em;
+}
+
+.cont-modal-cuadro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  font-size: 1.6em;
+}

@@ -1,11 +1,12 @@
 import axios from "axios";
 import "../style/base.css";
 import { Add } from "./Add";
-import { useAppContext } from "../context/TheContext.jsx";
+import { useContext } from "react";
+import TheContext from "../context/TheContext.jsx";
 
 export const Base = () => {
  
- const { reservas, recaudacion} = useAppContext()
+ const { reservas, recaudacion} = useContext(TheContext)
 
   return (
     <>
